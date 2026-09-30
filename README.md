@@ -1,17 +1,17 @@
 # Order Rider — Delivery Driver Command Center
 
-Flutter app for delivery drivers with Arabic/English UI, OpenStreetMap, GPS tracking, work sessions, orders, fuel/expense calculations, analytics, themes, local Drift storage, and optional Supabase sync.
+Complete Flutter app for delivery drivers: maps, GPS, orders, fuel, expenses, analytics.
 
-## Build locally
+## Features
+- OpenStreetMap (no API key required)
+- Accurate GPS tracking with outlier/spike filtering
+- Work sessions and order management
+- Automatic fuel and net income calculation
+- Daily/weekly/monthly analytics
+- Arabic + English (RTL/LTR)
+- 4 themes: Dark, Light, Material You, Liquid Glass
+- Optional cloud sync via Supabase
 
-```bash
-flutter pub get
-dart run build_runner build --delete-conflicting-outputs
-flutter run
-```
-
-The generated `lib/data/local/database.g.dart` is intentionally produced by Drift's build runner and is not committed.
-
-## Build APK with GitHub Actions
-
-Push to `main`/`master`, or run **Build Order Rider APK** manually from Actions. The workflow creates the Android shell, generates Drift code, analyzes, and publishes split APK artifacts.
+## Build
+This project builds automatically via GitHub Actions.
+See `.github/workflows/build-apk.yml`.

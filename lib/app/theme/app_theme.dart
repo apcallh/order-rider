@@ -45,7 +45,7 @@ class AppTheme {
         ),
         iconTheme: IconThemeData(color: AppColors.textPrimaryDark),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.darkCard,
         elevation: 4,
         shape: RoundedRectangleBorder(
@@ -141,7 +141,7 @@ class AppTheme {
         seedColor: AppColors.primaryBlue,
         brightness: b,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: isDark ? AppColors.glassDark : AppColors.glassLight,
         elevation: 0,
         shape: RoundedRectangleBorder(

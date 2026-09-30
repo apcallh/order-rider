@@ -49,11 +49,8 @@ jobs:
 
       - name: Patch app_links Android compatibility
         run: |
-          APP_LINKS_ROOT=$(find "$PUB_CACHE/hosted/pub.dev" -maxdepth 1 -type d -name 'app_links-*' -print -quit)
-          test -n "$APP_LINKS_ROOT"
-          APP_LINKS_GRADLE=$(grep -RIl 'flutter\.compileSdkVersion' "$APP_LINKS_ROOT" | head -n 1)
-          test -n "$APP_LINKS_GRADLE"
-          sed -i 's/flutter\.compileSdkVersion/35/g' "$APP_LINKS_GRADLE"
+          grep -RIl 'flutter\.compileSdkVersion' "$PUB_CACHE/hosted/pub.dev" \
+            | xargs -r sed -i 's/flutter\.compileSdkVersion/35/g'
 
       - name: Generate Drift code
         run: dart run build_runner build --delete-conflicting-outputs
